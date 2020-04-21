@@ -8,12 +8,12 @@ import (
 )
 
 var (
-	templateList = make([]interface{}, 10)
+	jsonList = make([]interface{}, 10)
 )
 
 func init() {
 	for i := 0; i < 10; i++ {
-		templateList[i] = map[string]interface{}{
+		jsonList[i] = map[string]interface{}{
 			"id":   i,
 			"name": fmt.Sprintf(`name-%d`, i),
 		}
@@ -32,11 +32,9 @@ func main() {
 	r.GET("/query", func(c *gin.Context) {
 		c.String(http.StatusOK, c.Query("id"))
 	})
-	// 3. Template parsing.
-	r.GET("/template", func(c *gin.Context) {
-		c.HTML(http.StatusOK, "template.html", gin.H{
-			"list": templateList,
-		})
+	// 3. JSON response.
+	r.GET("/json", func(c *gin.Context) {
+		c.JSON(http.StatusOK, jsonList)
 	})
 	r.Run(":3000")
 }

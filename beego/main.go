@@ -6,12 +6,12 @@ import (
 )
 
 var (
-	templateList = make([]interface{}, 10)
+	jsonList = make([]interface{}, 10)
 )
 
 func init() {
 	for i := 0; i < 10; i++ {
-		templateList[i] = map[string]interface{}{
+		jsonList[i] = map[string]interface{}{
 			"id":   i,
 			"name": fmt.Sprintf(`name-%d`, i),
 		}
@@ -32,16 +32,14 @@ func (c *Controller) Query() {
 	c.Ctx.WriteString(c.Ctx.Input.Query("id"))
 }
 
-// 3. Template parsing.
+// 3. JSON response.
 func (c *Controller) Template() {
-	c.TplName = "template.html"
-	c.Data["list"] = templateList
-	c.Render()
+	c.Ctx.Output.JSON(jsonList, false, true)
 }
 
 func main() {
 	beego.Router("/hello", &Controller{}, "GET:Hello")
 	beego.Router("/query", &Controller{}, "GET:Query")
-	beego.Router("/template", &Controller{}, "GET:Template")
+	beego.Router("/json", &Controller{}, "GET:Template")
 	beego.Run(":3000")
 }
