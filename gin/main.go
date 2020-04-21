@@ -23,7 +23,6 @@ func init() {
 func main() {
 	gin.SetMode(gin.ReleaseMode)
 	r := gin.New()
-	r.LoadHTMLFiles("template.html")
 	// 1. Plaintext
 	r.GET("/hello", func(c *gin.Context) {
 		c.String(http.StatusOK, "hello world")
