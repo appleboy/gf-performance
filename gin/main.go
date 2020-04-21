@@ -1,24 +1,10 @@
 package main
 
 import (
-	"fmt"
 	"net/http"
 
 	"github.com/gin-gonic/gin"
 )
-
-var (
-	jsonList = make([]interface{}, 10)
-)
-
-func init() {
-	for i := 0; i < 10; i++ {
-		jsonList[i] = map[string]interface{}{
-			"id":   i,
-			"name": fmt.Sprintf(`name-%d`, i),
-		}
-	}
-}
 
 func main() {
 	gin.SetMode(gin.ReleaseMode)
@@ -33,7 +19,10 @@ func main() {
 	})
 	// 3. JSON response.
 	r.GET("/json", func(c *gin.Context) {
-		c.JSON(http.StatusOK, jsonList)
+		c.JSON(http.StatusOK, map[string]interface{}{
+			"id":   10000,
+			"name": "benchmarks",
+		})
 	})
 	r.Run(":3000")
 }

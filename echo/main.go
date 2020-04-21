@@ -1,23 +1,9 @@
 package main
 
 import (
-	"fmt"
 	"github.com/labstack/echo"
 	"net/http"
 )
-
-var (
-	jsonList = make([]interface{}, 10)
-)
-
-func init() {
-	for i := 0; i < 10; i++ {
-		jsonList[i] = map[string]interface{}{
-			"id":   i,
-			"name": fmt.Sprintf(`name-%d`, i),
-		}
-	}
-}
 
 func main() {
 	e := echo.New()
@@ -33,7 +19,10 @@ func main() {
 
 	// 3. JSON response.
 	e.GET("/json", func(c echo.Context) error {
-		return c.JSON(http.StatusOK, jsonList)
+		return c.JSON(http.StatusOK, map[string]interface{}{
+			"id":   10000,
+			"name": "benchmarks",
+		})
 	})
 
 	e.Start(":3000")

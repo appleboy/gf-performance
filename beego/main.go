@@ -1,22 +1,8 @@
 package main
 
 import (
-	"fmt"
 	"github.com/astaxie/beego"
 )
-
-var (
-	jsonList = make([]interface{}, 10)
-)
-
-func init() {
-	for i := 0; i < 10; i++ {
-		jsonList[i] = map[string]interface{}{
-			"id":   i,
-			"name": fmt.Sprintf(`name-%d`, i),
-		}
-	}
-}
 
 type Controller struct {
 	beego.Controller
@@ -34,7 +20,10 @@ func (c *Controller) Query() {
 
 // 3. JSON response.
 func (c *Controller) Template() {
-	c.Ctx.Output.JSON(jsonList, false, true)
+	c.Ctx.Output.JSON(map[string]interface{}{
+		"id":   10000,
+		"name": "benchmarks",
+	}, false, true)
 }
 
 func main() {
