@@ -1,6 +1,6 @@
 # gf-performance
 
-Performance testing between `gf`, `gin`, `echo` and `beego`.
+Performance testing between `gf`, `gin`, `echo`, `iris` and `beego`.
 
 ## Environment:
 
@@ -13,6 +13,7 @@ Performance testing between `gf`, `gin`, `echo` and `beego`.
     GF   : v1.12.2
     Gin  : v1.6.2
     Echo : v3.3.10
+    Iris : v11.1.1
     Beego: v1.12.1
 
 ## Testing tool
@@ -25,7 +26,7 @@ ab -t 10 -c 100 http://127.0.0.1:3000/hello
 ab -t 10 -c 100 http://127.0.0.1:3000/query?id=10000
 ab -t 10 -c 100 http://127.0.0.1:3000/json
 ```
-The concurrency is start from `100` to `10000`.
+The concurrency starts from `100` to `10000`.
 
 ## Testing cases
 ### 1. Hello World
