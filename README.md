@@ -29,6 +29,10 @@ ab -t 10 -c 100 http://127.0.0.1:3000/json
 The concurrency starts from `100` to `10000`.
 
 ## Testing cases
+
+
+Run `5` times for each case of each project and pick up the best testing result.
+
 ### 1. Hello World
 
 #### 1). Throughputs
