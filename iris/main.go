@@ -4,6 +4,7 @@ import "github.com/kataras/iris"
 
 func main() {
 	app := iris.Default()
+	app.Logger().SetLevel("disable")
 	app.Get("/hello", func(ctx iris.Context) {
 		ctx.WriteString("hello world")
 	})
