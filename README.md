@@ -35,6 +35,19 @@ Run `5` times for each case of each project and pick up the best testing result.
 
 ### 1. Hello World
 
+<table>
+<tr>
+<th>Throughputs</th>
+<th>Mean Latency</th>
+<th>P99 Latency</th>
+</tr>
+<tr>
+<td width="30%"><img src="http://gfcdn.johng.cn/images/performance/throughputs1.jpeg"></td>
+<td width="30%"><img src="http://gfcdn.johng.cn/images/performance/meanlatency1.jpeg"></td>
+<td width="30%"><img src="http://gfcdn.johng.cn/images/performance/p99latency1.jpeg"></td>
+</tr>
+</table>
+
 #### 1). Throughputs
 
 |       | 100   | 300   | 500   | 800   | 1000  | 3000  | 5000  | 8000  | 10000 |
@@ -71,6 +84,19 @@ Run `5` times for each case of each project and pick up the best testing result.
 
 
 ### 3. JSON Response.
+
+<table>
+<tr>
+<th>Throughputs</th>
+<th>Mean Latency</th>
+<th>P99 Latency</th>
+</tr>
+<tr>
+<td width="30%"><img src="http://gfcdn.johng.cn/images/performance/throughputs3.jpeg"></td>
+<td width="30%"><img src="http://gfcdn.johng.cn/images/performance/meanlatency3.jpeg"></td>
+<td width="30%"><img src="http://gfcdn.johng.cn/images/performance/p99latency3.jpeg"></td>
+</tr>
+</table>
 
 #### 1). Throughputs
 
